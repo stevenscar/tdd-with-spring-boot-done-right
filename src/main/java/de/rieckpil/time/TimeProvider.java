@@ -1,4 +1,4 @@
-package de.rieckpil;
+package de.rieckpil.time;
 
 import org.springframework.stereotype.Component;
 import java.time.LocalDate;

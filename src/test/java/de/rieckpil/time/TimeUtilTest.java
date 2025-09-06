@@ -1,4 +1,4 @@
-package de.rieckpil;
+package de.rieckpil.time;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
