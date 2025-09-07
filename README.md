@@ -6,8 +6,8 @@
 [![](https://img.shields.io/badge/Java%20Version-21-orange)](/pom.xml)
 [![](https://img.shields.io/badge/Enroll-Now-orange)](https://rieckpil.de/tdd-with-spring-boot-done-right/)
 
-- `main` branch: [![Build & Test Maven Project](https://github.com/rieckpil/tdd-with-spring-boot-done-right/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/rieckpil/tdd-with-spring-boot-done-right/actions/workflows/maven.yml)
-- `code-along` branch: [![Build & Test Maven Project](https://github.com/rieckpil/tdd-with-spring-boot-done-right/actions/workflows/maven.yml/badge.svg?branch=code-along)](https://github.com/rieckpil/tdd-with-spring-boot-done-right/actions/workflows/maven.yml)
+- `main` branch: [![Build & Test Maven Project](https://github.com/stevenscar/tdd-with-spring-boot-done-right/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/rieckpil/tdd-with-spring-boot-done-right/actions/workflows/maven.yml)
+- `code-along` branch: [![Build & Test Maven Project](https://github.com/stevenscar/tdd-with-spring-boot-done-right/actions/workflows/maven.yml/badge.svg?branch=code-along)](https://github.com/rieckpil/tdd-with-spring-boot-done-right/actions/workflows/maven.yml)
 
 ## Introduction
 
