@@ -1,8 +1,9 @@
 package de.rieckpil.comment;
 
-import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
+
+import org.springframework.stereotype.Service;
 
 @Service
 public class CommentService {
@@ -16,5 +17,4 @@ public class CommentService {
     // TODO: implement
     return UUID.randomUUID();
   }
-
 }

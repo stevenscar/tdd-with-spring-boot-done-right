@@ -1,5 +1,8 @@
 package de.rieckpil.comment;
 
+import java.util.List;
+import java.util.UUID;
+
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -9,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
-import java.util.List;
-import java.util.UUID;
 
 /**
  * Develop a REST API to retrieve and create comments. Everybody should be able to retrieve comments
@@ -32,17 +33,15 @@ public class CommentController {
 
   @PostMapping("/api/comments")
   public ResponseEntity<Void> createComment(
-    @Valid @RequestBody Comment comment,
-    Authentication authentication,
-    UriComponentsBuilder uriComponentsBuilder) {
+      @Valid @RequestBody Comment comment,
+      Authentication authentication,
+      UriComponentsBuilder uriComponentsBuilder) {
 
     UUID newCommentId = commentService.createComment(comment, authentication.getName());
 
-    UriComponents uriComponents = uriComponentsBuilder
-      .path("/api/comments/{id}")
-      .buildAndExpand(newCommentId);
+    UriComponents uriComponents =
+        uriComponentsBuilder.path("/api/comments/{id}").buildAndExpand(newCommentId);
 
     return ResponseEntity.created(uriComponents.toUri()).build();
   }
-
 }

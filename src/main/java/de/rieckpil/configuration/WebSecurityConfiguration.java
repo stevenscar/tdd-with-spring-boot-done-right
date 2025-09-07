@@ -12,17 +12,22 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfiguration {
 
   @Bean
-  public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity) throws Exception {
+  public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity httpSecurity)
+      throws Exception {
 
     httpSecurity
-      .authorizeHttpRequests(requests ->
-          requests.requestMatchers(HttpMethod.GET,"/api/comments").permitAll()
-              .requestMatchers(HttpMethod.POST, "/api/comments").hasRole("ADMIN")
-              .anyRequest().authenticated())
-      .httpBasic(Customizer.withDefaults())
-      .csrf(AbstractHttpConfigurer::disable);
+        .authorizeHttpRequests(
+            requests ->
+                requests
+                    .requestMatchers(HttpMethod.GET, "/api/comments")
+                    .permitAll()
+                    .requestMatchers(HttpMethod.POST, "/api/comments")
+                    .hasRole("ADMIN")
+                    .anyRequest()
+                    .authenticated())
+        .httpBasic(Customizer.withDefaults())
+        .csrf(AbstractHttpConfigurer::disable);
 
     return httpSecurity.build();
   }
-
 }

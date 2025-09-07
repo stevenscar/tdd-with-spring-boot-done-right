@@ -1,9 +1,10 @@
 package de.rieckpil.post;
 
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Develop an HTTP client that fetch all posts from the post-service and return them as a list. The
@@ -28,7 +29,9 @@ public class PostClient {
     long total;
 
     do {
-      PostResult postResult = restTemplate.getForObject("/posts?limit={limit}&skip={skip}", PostResult.class, limit, skip);
+      PostResult postResult =
+          restTemplate.getForObject(
+              "/posts?limit={limit}&skip={skip}", PostResult.class, limit, skip);
       if (postResult == null || postResult.posts() == null) {
         break;
       }
@@ -39,5 +42,4 @@ public class PostClient {
 
     return allPosts;
   }
-
 }

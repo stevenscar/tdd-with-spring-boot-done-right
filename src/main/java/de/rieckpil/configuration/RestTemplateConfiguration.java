@@ -11,7 +11,8 @@ public class RestTemplateConfiguration {
 
   private final String postServiceBaseUrl;
 
-  public RestTemplateConfiguration(@Value("${app.post-service-base-url}") String postServiceBaseUrl) {
+  public RestTemplateConfiguration(
+      @Value("${app.post-service-base-url}") String postServiceBaseUrl) {
     this.postServiceBaseUrl = postServiceBaseUrl;
   }
 
@@ -19,5 +20,4 @@ public class RestTemplateConfiguration {
   public RestTemplate postServiceRestTemplate() {
     return new RestTemplateBuilder().rootUri(postServiceBaseUrl).build();
   }
-
 }

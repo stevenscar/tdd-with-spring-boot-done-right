@@ -1,15 +1,15 @@
 package de.rieckpil.time;
 
-import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 import java.time.Period;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Develop a feature to display information when a comment was made (one day ago, 3 days ago, 6
- * month ago, etc.) in a human-readable format:
- * - A comment that is older than 365 days, should return 'more than a year'.
- * - A comment within today should return 'today'.
- * - A date in the future is invalid and should throw an exception.
+ * month ago, etc.) in a human-readable format: - A comment that is older than 365 days, should
+ * return 'more than a year'. - A comment within today should return 'today'. - A date in the future
+ * is invalid and should throw an exception.
  */
 @Component
 public class TimeUtil {
@@ -41,9 +41,6 @@ public class TimeUtil {
   }
 
   private String formatTimeAgo(int amount, String unit) {
-    return amount == 1 ?
-      "one %s ago".formatted(unit) :
-      "%s %ss ago".formatted(amount, unit);
+    return amount == 1 ? "one %s ago".formatted(unit) : "%s %ss ago".formatted(amount, unit);
   }
-
 }
